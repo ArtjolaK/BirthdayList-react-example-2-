@@ -5,6 +5,11 @@ import "./index.css";
 
 const Birthdaylist = () => {
   const [people, setPeople] = useState(database);
+  const clickEvent=()=>{
+    const newPeople=people.filter((person)=>{
+      person.id !== id
+       setPeople(newPeople)
+    })  }
   return (
     <>
       <div className="container">
@@ -19,6 +24,7 @@ const Birthdaylist = () => {
                 <article key={id} className="list ">
                   <h1>{name}</h1>
                   <h1>{age} years</h1>
+            <button onClick={()=> clickEvent(id)}>Clear Item</button>
                 </article>
               </div>
               .
